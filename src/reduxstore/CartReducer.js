@@ -17,10 +17,20 @@ const CartReducer = (state = {
             state["removed"] = true
 
             state.totalPrice = 0
-            state.cart.map((item) => { 
-                state.totalPrice += item.price
-         });
-         
+        //     if(state.cart.length>0){
+        //     state.cart.map((item) => { 
+        //         state.totalPrice += item.price
+        //  });
+
+        //  {state.cart && state.cart.map((item) => { 
+        //     //console.log(item.price);
+        //     if(item.cakeid == action.payload.cart.cakeid)
+        //     {
+        //         state.totalPrice +=  ((item.price / item.quantity) * (item.quantity + 1))
+        //         item.quantity = (item.quantity + 1)
+        //     } else {
+        //      state.totalPrice += item.price;
+        //  }
 
             return state
         }
@@ -32,9 +42,11 @@ const CartReducer = (state = {
             state["removed"] = false
 
             state.totalPrice = 0
-            state.cart.map((item) => { 
-                state.totalPrice += item.price
-         });
+        //     if(state.cart.length>0){
+        //     state.cart.map((item) => { 
+        //         state.totalPrice += item.price
+        //  });
+
          
          
             return state

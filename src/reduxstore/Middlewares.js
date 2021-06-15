@@ -9,12 +9,17 @@ export const addToCartMiddleware = (data) => {
             method: 'post',
             data: {cakeid: data.cakeid, image: data.image, name: data.name, price: data.price, weight: data.weight}
         }).then(res => {
+
+            if (res.data !== 'Session Expired') {
             dispatch({
                 type: "ADDTOCART",
                 payload: {
                     data: res.data.data
                 }
             })
+        }else{
+            alert('Login please')
+        }
         }, err => { })
     }
 }
@@ -28,6 +33,8 @@ export const addCartMiddleware = (data) => {
             method: 'post',
             data: {cakeid: data.cakeid, image: data.image, name: data.name, price: data.price, weight: data.weight}
         }).then(res => {
+
+            
             dispatch({
                 type: "ADDTOCART",
                 payload: {
